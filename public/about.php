@@ -13,30 +13,34 @@ body {
     padding: 0;
 }
 
+
 header {
     background: #081c3c;
-    padding: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
-
 header h1 {
     color: #f1c40f;
     margin: 0;
-    font-size: 28px;
+    font-size: 26px;
+    letter-spacing: 1px;
 }
-
 nav {
-    margin-top: 10px;
+    display: flex;
+    gap: 25px;
 }
-
 nav a {
     color: #fff;
     text-decoration: none;
-    margin: 0 12px;
-    font-weight: bold;
+    font-weight: 600;
     transition: color 0.3s;
 }
-
 nav a:hover {
     color: #f1c40f;
 }
@@ -88,6 +92,7 @@ main h2 {
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
+/* ===== Footer ===== */
 footer {
     text-align: center;
     margin: 40px 0;
@@ -95,8 +100,17 @@ footer {
     color: #ccc;
 }
 
-/* Responsif untuk mobile */
+/* ===== Responsif untuk Mobile ===== */
 @media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
     .about-container {
         flex-direction: column;
         align-items: center;
@@ -109,13 +123,12 @@ footer {
 </head>
 <body>
 <header>
-    <h1>🎸 CYRUS</h1>
+    <h1>🎸 Cyrus</h1>
     <nav>
-        <a href="index.php">Home</a> |
-        <a href="articles.php">Artikel</a> |
-        <a href="about.php">Tentang</a> |
-        <a href="contact.php">Kontak</a> |
-        <a href="login.php">Login</a>
+        <a href="index.php">Home</a>
+        <a href="articles.php">Artikel</a>
+        <a href="about.php">Tentang</a>
+        <a href="contact.php">Kontak</a>
     </nav>
 </header>
 
@@ -123,7 +136,7 @@ footer {
     <h2>Tentang Kami</h2>
     <div class="about-container">
         <div class="about-photo">
-            <img src="../assets/images/merry.jpg" alt="Foto Merry Helty Sinaga">
+            <img src="../assets/images/foto.jpg" alt="Foto Merry Helty Sinaga">
         </div>
         <div class="about-text">
             <p>
@@ -140,7 +153,8 @@ footer {
 </main>
 
 <footer>
-    &copy; 2025 Cyrus. All rights reserved.
+    &copy; <?= date('Y') ?> Cyrus | Semua Hak Dilindungi
 </footer>
+
 </body>
 </html>

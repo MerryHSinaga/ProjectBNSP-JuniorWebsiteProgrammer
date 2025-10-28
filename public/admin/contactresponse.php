@@ -23,102 +23,108 @@ $res = $conn->query("SELECT * FROM contacts ORDER BY id DESC");
 <head>
 <meta charset="UTF-8">
 <title>Pesan Kontak - Admin</title>
-<link rel="stylesheet" href="../../assets/css/style.css">
 <style>
-    body {
-        font-family: 'Segoe UI', sans-serif;
-        background: linear-gradient(to bottom, #0d2348, #122b66);
-        color: #fff;
-        margin: 0;
-        padding: 0;
-    }
-    header {
-        background: #081c3c;
-        padding: 20px;
-        text-align: center;
-        color: #f1c40f;
-    }
-    nav a {
-        color: #fff;
-        margin: 0 10px;
-        text-decoration: none;
-        font-weight: bold;
-    }
-    nav a:hover {
-        color: #ffe066;
-    }
-    main {
-        max-width: 900px;
-        margin: 30px auto;
-        padding: 20px;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 12px;
-    }
-    h2 {
-        text-align: center;
-        color: #f1c40f;
-    }
-    .message-list {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        max-height: 500px;
-        overflow-y: auto;
-        margin-top: 20px;
-        padding-right: 10px;
-    }
-    .message-card {
-        background: #1b3570;
-        border-radius: 10px;
-        padding: 15px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        position: relative;
-    }
-    .message-card strong {
-        color: #f1c40f;
-    }
-    .message-card p {
-        margin: 5px 0 0 0;
-        color: #ddd;
-    }
-    .delete-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: #e74c3c;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        padding: 5px 10px;
-        cursor: pointer;
-        font-weight: bold;
-        transition: 0.2s;
-        text-decoration: none;
-    }
-    .delete-btn:hover {
-        background: #c0392b;
-    }
-    .back-home {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 10px 20px;
-        background: #f1c40f;
-        color: #0d2348;
-        text-decoration: none;
-        border-radius: 6px;
-        font-weight: bold;
-        transition: 0.2s;
-    }
-    .back-home:hover {
-        background: #ffe066;
-    }
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #123458, #1a3a7a);
+    color: #fff;
+    margin: 0;
+}
+
+
+header {
+    background: #0d2348;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+header h1 {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0;
+    color: #f1c40f;
+    letter-spacing: 2px;
+}
+nav a {
+    color: #fff;
+    margin-left: 18px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+nav a:hover {
+    color: #f1c40f;
+}
+
+
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+h2 {
+    text-align: center;
+    color: #f1c40f;
+    margin-bottom: 25px;
+}
+
+
+.message-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+.message-card {
+    background: #1b3570;
+    border-radius: 10px;
+    padding: 15px 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    position: relative;
+}
+.message-card strong {
+    color: #f1c40f;
+}
+.message-card p {
+    margin: 5px 0 0;
+    color: #ddd;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.25s;
+    text-decoration: none;
+}
+.delete-btn:hover {
+    background: #c0392b;
+}
 </style>
 </head>
 <body>
+
 <header>
-    <h1>🎸 Pesan Kontak - Admin</h1>
+    <h1>🎸 CYRUS</h1>
     <nav>
-        <a href="dashboard.php">Dashboard</a> |
+        <a href="dashboard.php">Dashboard</a>
+        <a href="../admin/articles.php">Artikel</a>
+        <a href="../admin/about_admin.php">Tentang</a>
+        <a href="../admin/contactresponse.php">Kontak</a>
         <a href="../admin/logout.php">Logout</a>
     </nav>
 </header>
@@ -126,7 +132,7 @@ $res = $conn->query("SELECT * FROM contacts ORDER BY id DESC");
 <main>
     <h2>Pesan dari Pengunjung</h2>
 
-    <?php if($res->num_rows > 0): ?>
+    <?php if ($res->num_rows > 0): ?>
         <div class="message-list">
             <?php while($row = $res->fetch_assoc()): ?>
                 <div class="message-card">
@@ -139,10 +145,7 @@ $res = $conn->query("SELECT * FROM contacts ORDER BY id DESC");
     <?php else: ?>
         <p style="text-align:center;">Belum ada pesan masuk.</p>
     <?php endif; ?>
-
-    <div style="text-align:center;">
-        <a href="../index.php" class="back-home">🏠 Kembali ke Home</a>
-    </div>
 </main>
+
 </body>
 </html>

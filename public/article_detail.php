@@ -83,7 +83,8 @@ if (!$song) {
 
   <pre class="lyrics"><?= e($song['lyrics']) ?></pre>
 
-  <a href="articles.php" class="back">⬅️ Kembali</a>
+  <a href="articles.php" class="back">Kembali</a>
 </main>
+
 </body>
 </html>

@@ -75,7 +75,6 @@ main {
     <a href="articles.php">Artikel</a> |
     <a href="about.php">Tentang</a> |
     <a href="contact.php">Kontak</a> |
-    <a href="login.php">Login</a>
   </nav>
 </header>
 
@@ -86,5 +85,11 @@ main {
     <a href="index.php">Kembali ke Home</a>
   </div>
 </main>
+<footer>
+  &copy; <?= date('Y') ?> Cyrus | 
+  <a href="https://instagram.com/merry.el.sinaga" target="_blank">Instagram</a> |
+  <a href="https://wa.me/6281996953237" target="_blank">WhatsApp</a>
+</footer>
+
 </body>
 </html>

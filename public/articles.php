@@ -26,28 +26,47 @@ if (!empty($search)) {
 <link rel="stylesheet" href="../assets/css/style.css">
 <style>
     body {
-        font-family: sans-serif;
+        font-family: 'Segoe UI', sans-serif;
         margin: 0;
         background: linear-gradient(to bottom, #123458, #1a3a7a);
         color: #fff;
     }
+
+    /* ===== Header/Navbar ===== */
     header {
-        background: #0d2348;
-        color: #fff;
-        padding: 20px 0;
-        text-align: center;
+        background: #081c3c;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 50px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        position: sticky;
+        top: 0;
+        z-index: 10;
     }
-    header h1 { margin: 0; font-size: 32px; }
+    header h1 {
+        font-size: 26px;
+        color: #f1c40f;
+        margin: 0;
+        letter-spacing: 1px;
+    }
+    nav {
+        display: flex;
+        gap: 25px;
+    }
     nav a {
         color: #fff;
-        margin: 0 12px;
         text-decoration: none;
-        font-weight: bold;
-        transition: color 0.2s;
+        font-weight: 600;
+        transition: color 0.3s;
     }
-    nav a:hover { color: #f1c40f; }
+    nav a:hover {
+        color: #f1c40f;
+    }
+
+    /* ===== Search Bar ===== */
     .search-bar {
-        margin: 25px auto;
+        margin: 30px auto;
         text-align: center;
     }
     .search-bar input {
@@ -65,7 +84,13 @@ if (!empty($search)) {
         color: #123458;
         font-weight: bold;
         cursor: pointer;
+        transition: background 0.3s;
     }
+    .search-bar button:hover {
+        background: #ffe066;
+    }
+
+    /* ===== Song Grid ===== */
     .song-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, 220px);
@@ -109,17 +134,14 @@ if (!empty($search)) {
 </head>
 <body>
 <header>
-    <h1>🎸 CYRUS</h1>
+    <h1>🎸 Cyrus</h1>
     <nav>
         <a href="index.php">Home</a>
         <a href="articles.php">Artikel</a>
         <a href="about.php">Tentang</a>
         <a href="contact.php">Kontak</a>
         <?php if (isLoggedIn()): ?>
-            | <a href="admin/dashboard.php">Dashboard</a>
-            | <a href="logout.php" onclick="return confirm('Logout?')">Logout</a>
         <?php else: ?>
-            | <a href="login.php">Login</a>
         <?php endif; ?>
     </nav>
 </header>
@@ -148,5 +170,6 @@ if (!empty($search)) {
         <p style="text-align:center; grid-column:1/-1;">Tidak ada lagu ditemukan.</p>
     <?php endif; ?>
 </div>
+
 </body>
 </html>

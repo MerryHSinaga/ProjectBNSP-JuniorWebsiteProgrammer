@@ -18,7 +18,7 @@ if (!$song) {
     exit;
 }
 
-// === Update Lagu ===
+//Update Lagu
 if (isset($_POST['update_song'])) {
     $title = trim($_POST['title']);
     $artist = trim($_POST['artist']);
@@ -100,7 +100,8 @@ if (isset($_POST['update_song'])) {
 <header>
   <h1>✏️ Edit Lagu - CYRUS</h1>
   <nav>
-    <a href="dashboard.php" style="color:#fff;">⬅️ Kembali ke Dashboard</a>
+    <a href="dashboard.php" style="color:#fff;">Kembali ke Dashboard</a>
+    <a href="../admin/logout.php">Logout</a>
   </nav>
 </header>
 
@@ -121,7 +122,7 @@ if (isset($_POST['update_song'])) {
     <label>Ganti Thumbnail (opsional):</label>
     <input type="file" name="image" accept="image/*">
 
-    <button type="submit" name="update_song">💾 Simpan Perubahan</button>
+    <button type="submit" name="update_song">Simpan Perubahan</button>
   </form>
 </main>
 </body>

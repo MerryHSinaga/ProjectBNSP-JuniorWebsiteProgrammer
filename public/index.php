@@ -23,23 +23,46 @@ while ($row = $res->fetch_assoc()) {
       margin: 0;
       padding: 0;
     }
+
+   
     header {
       background: #081c3c;
-      padding: 20px;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header h1 {
+      font-size: 26px;
+      color: #f1c40f;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+    nav {
+      display: flex;
+      gap: 25px;
     }
     nav a {
       color: #fff;
-      margin: 0 10px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      transition: color 0.3s;
     }
+    nav a:hover {
+      color: #f1c40f;
+    }
+
+    
     .hero {
       text-align: center;
-      padding: 60px 20px;
+      padding: 80px 20px;
     }
     .hero h1 {
-      font-size: 40px;
+      font-size: 42px;
       color: #f1c40f;
       margin-bottom: 15px;
     }
@@ -60,11 +83,12 @@ while ($row = $res->fetch_assoc()) {
       background: #ffe066;
     }
 
+    
     .song-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 20px;
-      padding: 20px;
+      padding: 20px 50px;
       justify-items: center;
     }
     .song-card {
@@ -112,6 +136,7 @@ while ($row = $res->fetch_assoc()) {
       background: #2980b9;
     }
 
+    
     footer {
       text-align: center;
       padding: 20px;
@@ -130,11 +155,10 @@ while ($row = $res->fetch_assoc()) {
 <header>
   <h1>🎸 Cyrus</h1>
   <nav>
-    <a href="index.php">Home</a> |
-    <a href="articles.php">Artikel</a> |
-    <a href="about.php">Tentang</a> |
-    <a href="contact.php">Kontak</a> |
-    <a href="login.php">Login</a>
+    <a href="index.php">Home</a>
+    <a href="articles.php">Artikel</a>
+    <a href="about.php">Tentang</a>
+    <a href="contact.php">Kontak</a>
   </nav>
 </header>
 
