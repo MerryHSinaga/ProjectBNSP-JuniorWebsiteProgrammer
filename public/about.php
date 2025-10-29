@@ -92,7 +92,7 @@ main h2 {
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
-/* ===== Footer ===== */
+/* footernya */
 footer {
     text-align: center;
     margin: 40px 0;
@@ -100,7 +100,7 @@ footer {
     color: #ccc;
 }
 
-/* ===== Responsif untuk Mobile ===== */
+
 @media (max-width: 700px) {
     header {
         flex-direction: column;
@@ -123,7 +123,7 @@ footer {
 </head>
 <body>
 <header>
-    <h1>🎸 Cyrus</h1>
+    <h1>🎸Cyrus</h1>
     <nav>
         <a href="index.php">Home</a>
         <a href="articles.php">Artikel</a>
@@ -146,15 +146,18 @@ footer {
                 Cyrus juga memberikan kemudahan bagi pengunjung untuk menemukan lagu baru melalui fitur pencarian dan kategori, menjadikannya sumber informasi lirik yang cepat, akurat, dan menyenangkan bagi semua penggemar musik.
             </p>
             <p>
-                Dibuat oleh <strong>Merry Helty Sinaga</strong> sebagai bagian dari proyek sertifikasi BSNP.
+                Dibuat oleh <strong>Merry Helty Sinaga</strong> sebagai bagian dari proyek sertifikasi BNSP.
             </p>
         </div>
     </div>
 </main>
 
-<footer>
-    &copy; <?= date('Y') ?> Cyrus | Semua Hak Dilindungi
+<footer style="text-align:center; padding:15px; font-size:13px; background:#081c3c; color:#ffffff;">
+  &copy; <?= date('Y') ?> <span style="color:#ffffff;">Cyrus</span> | 
+  <a href="https://instagram.com/merry.el.sinaga" target="_blank" style="color:#f1c40f; text-decoration:none;">Instagram</a> |
+  <a href="https://wa.me/6281996950000" target="_blank" style="color:#f1c40f; text-decoration:none;">WhatsApp</a>
 </footer>
+
 
 </body>
 </html>

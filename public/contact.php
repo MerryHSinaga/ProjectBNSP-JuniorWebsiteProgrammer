@@ -69,12 +69,11 @@ nav a:hover {
     color: #f1c40f;
 }
 
-
 main {
     flex: 1;
-    max-width: 1000px;
+    max-width: 950px;
     margin: 60px auto;
-    padding: 40px 20px;
+    padding: 30px 25px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 12px;
     display: flex;
@@ -88,6 +87,8 @@ main {
 
 .contact-form {
     flex: 1 1 420px;
+    max-width: 450px;
+    margin: 0 auto;
 }
 
 .contact-form h3 {
@@ -97,13 +98,19 @@ main {
     font-size: 22px;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 form input, form textarea, form button {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
+    padding: 12px 14px;
     border-radius: 8px;
     border: none;
     font-size: 14px;
+    box-sizing: border-box;
 }
 
 form input, form textarea {
@@ -132,10 +139,12 @@ form button:hover {
     background: #ffe066;
 }
 
-
+/*Infonya */
 .contact-info {
     flex: 1 1 400px;
     text-align: left;
+    max-width: 450px;
+    margin: 0 auto;
 }
 
 .contact-info h2 {
@@ -172,7 +181,6 @@ form button:hover {
     background: #2980b9;
 }
 
-
 footer {
     text-align: center;
     color: #ccc;
@@ -191,7 +199,6 @@ footer a:hover {
     text-decoration: underline;
 }
 
-
 @media (max-width: 768px) {
     main {
         flex-direction: column;
@@ -201,6 +208,7 @@ footer a:hover {
 
     .contact-info, .contact-form {
         flex: 1 1 100%;
+        max-width: 100%;
     }
 }
 </style>
@@ -208,7 +216,7 @@ footer a:hover {
 
 <body>
 <header>
-    <div class="logo">CYRUS</div>
+    <div class="logo">🎸Cyrus</div>
     <nav>
         <a href="index.php">Home</a>
         <a href="articles.php">Artikel</a>
@@ -218,21 +226,17 @@ footer a:hover {
 </header>
 
 <main>
-   
     <div class="contact-info">
         <h2>Hubungi Kami</h2>
-        <p>
-            Kami senang mendengar pesan dan masukan dari Anda!  
-            Silakan kirimkan pertanyaan atau saran Anda melalui form di samping.
-        </p>
+        <p>Kami senang mendengar pesan dan masukan dari Anda!</p>
+        <p>Silakan kirimkan pertanyaan atau saran Anda melalui form di samping, atau hubungi kami melalui media sosial di bawah ini.</p>
 
         <div class="social-icons">
             <a href="https://instagram.com/merry.el.sinaga" target="_blank">Instagram</a>
-            <a href="https://wa.me/6281996953237" target="_blank">WhatsApp</a>
+            <a href="https://wa.me/6281996950000" target="_blank">WhatsApp</a>
         </div>
     </div>
 
-    
     <div class="contact-form">
         <h3>Kirim Pesan ke Cyrus</h3>
         <form method="POST" action="">
@@ -245,10 +249,9 @@ footer a:hover {
 </main>
 
 <footer>
-    &copy; <?= date('Y') ?> Cyrus |
-    <a href="https://instagram.com/merry.el.sinaga" target="_blank">Instagram</a> |
-    <a href="https://wa.me/6281996953237" target="_blank">WhatsApp</a>
+  &copy; <?= date('Y') ?> <span style="color:#ffffff;">Cyrus</span> | 
+  <a href="https://instagram.com/merry.el.sinaga" target="_blank">Instagram</a> |
+  <a href="https://wa.me/6281996950000" target="_blank">WhatsApp</a>
 </footer>
-
 </body>
 </html>

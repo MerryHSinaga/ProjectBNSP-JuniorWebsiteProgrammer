@@ -117,5 +117,10 @@ a {
 
     <a href="login.php">Sudah punya akun? Login</a>
 </div>
+<footer>
+  &copy; <?= date('Y') ?> Cyrus | 
+  <a href="https://instagram.com/merry.el.sinaga" target="_blank">Instagram</a> |
+  <a href="https://wa.me/6281996950000" target="_blank">WhatsApp</a>
+</footer>
 </body>
 </html>

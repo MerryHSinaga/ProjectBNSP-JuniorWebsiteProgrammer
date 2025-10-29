@@ -119,7 +119,7 @@ h2 {
 <body>
 
 <header>
-    <h1>🎸 CYRUS</h1>
+    <h1>🎸Cyrus</h1>
     <nav>
         <a href="dashboard.php">Dashboard</a>
         <a href="../admin/articles.php">Artikel</a>
@@ -146,6 +146,11 @@ h2 {
         <p style="text-align:center;">Belum ada pesan masuk.</p>
     <?php endif; ?>
 </main>
+<footer style="text-align:center; padding:15px; font-size:13px; background:#081c3c; color:#ffffff;">
+  &copy; <?= date('Y') ?> <span style="color:#ffffff;">Cyrus</span> | 
+  <a href="https://instagram.com/merry.el.sinaga" target="_blank" style="color:#f1c40f; text-decoration:none;">Instagram</a> |
+  <a href="https://wa.me/6281996950000" target="_blank" style="color:#f1c40f; text-decoration:none;">WhatsApp</a>
+</footer>
 
 </body>
 </html>

@@ -18,7 +18,7 @@ if (!$song) {
     exit;
 }
 
-//Update Lagu
+// Update Lagu
 if (isset($_POST['update_song'])) {
     $title = trim($_POST['title']);
     $artist = trim($_POST['artist']);
@@ -54,37 +54,72 @@ if (isset($_POST['update_song'])) {
       color: #fff;
       margin: 0;
       padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
+
     header {
       background: #081c3c;
-      padding: 20px;
-      text-align: center;
-      color: #f1c40f;
+      padding: 12px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+    .logo {
+      color:#f1c40f;
+      font-weight:700;
+      font-size:20px;
+    }
+    nav a {
+      color:#fff;
+      margin-left:12px;
+      text-decoration:none;
+      font-weight:600;
+      transition:color .2s ease;
+    }
+    nav a:hover { color:#f1c40f; }
+
+    /* === Bagian utamanya === */
     main {
-      padding: 30px;
+      flex: 1;
+      padding: 40px 20px;
       max-width: 700px;
       margin: 0 auto;
+      box-sizing: border-box;
     }
     form {
-      background: rgba(255,255,255,0.05);
+      background: rgba(255,255,255,0.03);
       padding: 25px;
       border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    }
+    label {
+      font-weight:600;
+      display:block;
+      margin-top:10px;
+      margin-bottom:4px;
     }
     input, textarea, button {
       width: 100%;
       padding: 10px;
-      margin: 8px 0;
-      border-radius: 6px;
+      margin-bottom: 10px;
+      border-radius: 8px;
       border: none;
       font-size: 15px;
+      box-sizing: border-box;
     }
+    input, textarea {
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+    }
+    input::placeholder, textarea::placeholder { color: #e6e6e6cc; }
     button {
       background: #f1c40f;
       color: #0d2348;
       font-weight: bold;
       cursor: pointer;
-      transition: 0.3s;
+      transition: background 0.3s;
     }
     button:hover { background: #ffe066; }
     img.preview {
@@ -93,19 +128,36 @@ if (isset($_POST['update_song'])) {
       height: auto;
       margin-bottom: 10px;
       border-radius: 8px;
+      border:2px solid rgba(255,255,255,0.12);
+    }
+
+    footer {
+      background:#081c3c;
+      padding:14px 0;
+      text-align:center;
+      color:#ccc;
+      margin-top:30px;
+    }
+    footer a {
+      color:#f1c40f;
+      text-decoration:none;
     }
   </style>
 </head>
 <body>
 <header>
-  <h1>✏️ Edit Lagu - CYRUS</h1>
+  <div class="logo">🎸Cyrus</div>
   <nav>
-    <a href="dashboard.php" style="color:#fff;">Kembali ke Dashboard</a>
+    <a href="dashboard.php">Dashboard</a>
+    <a href="../admin/articles.php">Artikel</a>
+    <a href="../admin/about_admin.php">Tentang</a>
+    <a href="../admin/contactresponse.php">Kontak</a>
     <a href="../admin/logout.php">Logout</a>
   </nav>
 </header>
 
 <main>
+  <h2 style="color:#f1c40f; text-align:center;">Edit Lagu / Lirik</h2>
   <form method="POST" enctype="multipart/form-data">
     <label>Judul Lagu:</label>
     <input type="text" name="title" value="<?= e($song['title']) ?>" required>
@@ -116,7 +168,7 @@ if (isset($_POST['update_song'])) {
     <label>Lirik Lagu:</label>
     <textarea name="lyrics" rows="5" required><?= e($song['lyrics']) ?></textarea>
 
-    <label>Thumbnail Saat Ini:</label><br>
+    <label>Thumbnail:</label>
     <img src="../../assets/images/<?= e($song['image'] ?: 'default.jpg') ?>" class="preview">
 
     <label>Ganti Thumbnail (opsional):</label>
@@ -125,5 +177,11 @@ if (isset($_POST['update_song'])) {
     <button type="submit" name="update_song">Simpan Perubahan</button>
   </form>
 </main>
+
+<footer>
+  &copy; <?= date('Y') ?> Cyrus |
+  <a href="https://instagram.com/merry.el.sinaga" target="_blank">Instagram</a> |
+  <a href="https://wa.me/6281996950000" target="_blank">WhatsApp</a>
+</footer>
 </body>
 </html>

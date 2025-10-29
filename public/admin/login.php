@@ -114,5 +114,6 @@ a {
 
     <a href="register.php">Belum punya akun? Daftar di sini</a>
 </div>
+
 </body>
 </html>
